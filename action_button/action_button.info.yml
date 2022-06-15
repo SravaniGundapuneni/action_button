@@ -1,0 +1,6 @@
+name: Action Button Module
+description: Allows privileged Users to start decommission workflow
+package: Custom
+
+type: module
+core_version_requirement: ^8 || ^9

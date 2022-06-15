@@ -1,0 +1,27 @@
+<?php
+
+function action_button_theme($existing, $type, $theme, $path) {
+  return ['action' =>
+    [
+      'variables' => [
+        'links' => null,
+        'description' => null
+      ],
+    ]
+  ];
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for block templates.
+ */
+function action_button_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+  $block_id = $variables['elements']['#id'];
+
+  switch ($block_id) {
+    case 'actionblock':
+      $suggestions[] = 'block__action_button';
+      break;
+  }
+}

@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Default theme implementation to print Lorem ipsum text.
+ *
+ * Available variables:
+ *   - source_text
+ *
+ * @see template_preprocess_loremipsum()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if links %}
+  {{ attach_library('action_button/colors') }}
+  <div class="dropdown show text-center w-200">
+    <a class="btn white-text-button primary-blue-button dropdown-toggle white br-25 col-12" href="#" role="button" id="actionDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Actions
+    </a>
+
+    <div class="dropdown-menu grey-button-background text-center w-100" aria-labelledby="actionDropDown">
+      {% for link in links %}
+        {{ link }}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
